@@ -50,7 +50,7 @@ class PostPaymentTest extends TestCase
             ->willReturn('{
                 "authStatus": {
                     "authStatusCode": 131,
-                    "statusDescription": "auth success"
+                    "authStatusDescription": "auth success"
                 },
                 "results": [{
                     "statusCode": 139,
@@ -113,7 +113,7 @@ class PostPaymentTest extends TestCase
 
         $this->assertInstanceOf(PaymentsResponse::class, $requestResult);
         $this->assertSame('131', $requestResult->authStatus->authStatusCode);
-        $this->assertSame('auth success', $requestResult->authStatus->statusDescription);
+        $this->assertSame('auth success', $requestResult->authStatus->authStatusDescription);
 
         [$paymentResut] = $requestResult->results;
         $this->assertSame('139', $paymentResut->statusCode);
@@ -121,5 +121,43 @@ class PostPaymentTest extends TestCase
         $this->assertSame('yourUniqueID', $paymentResut->payerTransactionID);
         $this->assertSame('ourBeepUniqueID', $paymentResut->beepTransactionID);
         $this->assertSame('', $paymentResut->receiptNumber);
+    }
+
+    /** @test */
+    public function it_can_handle_failed_auth()
+    {
+        $payment = $this->getMockBuilder(PaymentInterface::class)->getMock();
+        $payment->method('getDate')->willReturn(Carbon::create(2019, 02, 14, 22, 30, 45));
+
+        $mockedConfig = $this->getMockBuilder(ConfigInterface::class)->getMock();
+
+        $mockedResponse = $this->getMockBuilder(ResponseInterface::class)->getMock();
+        $mockedResponse->method('getStatusCode')->willReturn(200);
+        $mockedResponse->method('getBody')
+            ->willReturn('{
+                "authStatus": {
+                    "authStatusCode": 132,
+                    "authStatusDescription": "Invalid Credentials. Authentication Failed"
+                },
+                "results": []
+            }');
+
+        /** @var \Mockery\MockInterface $mockedClient */
+        $mockedClient = \Mockery::mock(\GuzzleHttp\Client::class);
+        $mockedClient->shouldReceive('request')->once()->andReturn($mockedResponse);
+
+        /**
+         * @var ConfigInterface $mockedConfig
+         * @var \GuzzleHttp\Client $mockedClient
+         * */
+        $api = new Client($mockedConfig, $mockedClient);
+
+        /** @var PaymentInterface $payment */
+        $requestResult = $api->postPayment($payment);
+
+        $this->assertInstanceOf(PaymentsResponse::class, $requestResult);
+        $this->assertSame('132', $requestResult->authStatus->authStatusCode);
+        $this->assertSame('Invalid Credentials. Authentication Failed', $requestResult->authStatus->authStatusDescription);
+        $this->assertCount(0, $requestResult->results);
     }
 }
