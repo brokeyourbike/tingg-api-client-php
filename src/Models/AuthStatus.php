@@ -16,5 +16,5 @@ use Spatie\DataTransferObject\DataTransferObject;
 class AuthStatus extends DataTransferObject
 {
     public string $authStatusCode;
-    public string $statusDescription;
+    public string $authStatusDescription;
 }
