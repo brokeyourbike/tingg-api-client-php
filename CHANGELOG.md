@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.1.1...v0.2.0) (2022-04-03)
+
+
+### Features
+
+* add new api method ([a81060d](https://www.github.com/brokeyourbike/tingg-api-client-php/commit/a81060dbb710bd0f9184eb96eeb41e5fa465c030))
+
 ### [0.1.1](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.1.0...v0.1.1) (2022-04-03)
 
 
