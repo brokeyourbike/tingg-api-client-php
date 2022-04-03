@@ -80,6 +80,29 @@ class Client implements HttpClientInterface
         return new PaymentsResponse($response);
     }
 
+    public function queryPaymentStatus(PaymentInterface $payment): PaymentsResponse
+    {
+        $response = $this->performRequest(HttpMethodEnum::POST, '/', [
+            'countryCode' => $payment->getCountryCodeAlpha2(),
+            'function' => 'BEEP.queryPaymentStatus',
+            'payload' => [
+                'credentials' => [
+                    'username' => $this->config->getUsername(),
+                    'password' => $this->config->getPassword(),
+                ],
+                'packet' => [
+                    [
+                        'payerTransactionID' => $payment->getReference(),
+                        'beepTransactionID' => $payment->getRemoteReference(),
+                        'clientCode' => '',
+                        'extraData' => '',
+                    ],
+                ],
+            ],
+        ]);
+        return new PaymentsResponse($response);
+    }
+
     /**
      * @param HttpMethodEnum $method
      * @param string $uri

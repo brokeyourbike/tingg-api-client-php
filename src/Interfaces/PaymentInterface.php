@@ -14,6 +14,7 @@ namespace BrokeYourBike\Tingg\Interfaces;
 interface PaymentInterface
 {
     public function getReference(): string;
+    public function getRemoteReference(): ?string;
     public function getCountryCodeAlpha2(): string;
     public function getCurrencyCode(): string;
     public function getAmount(): float;

@@ -19,5 +19,13 @@ class PaymentResult extends DataTransferObject
     public string $statusDescription;
     public string $payerTransactionID;
     public string $beepTransactionID;
+    public ?string $MSISDN;
+    public ?string $accountNumber;
+    public ?float $amount;
+    public ?string $dateCreated;
+    public ?string $serviceCode;
+    public ?string $serviceName;
+    public ?string $payerClientCode;
     public string $receiptNumber;
+    public ?string $receiverNarration;
 }
