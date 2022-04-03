@@ -101,10 +101,7 @@ class Client implements HttpClientInterface
 
         $options[$option] = $data;
 
-        // dd($options);
-
         $uri = (string) $this->resolveUriFor($this->config->getUrl(), $uri);
-        // dd($uri);
         return $this->httpClient->request($method->value, $uri, $options);
     }
 }
