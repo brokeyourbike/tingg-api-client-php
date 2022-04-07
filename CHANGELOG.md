@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.3.1...v0.3.2) (2022-04-07)
+
+
+### Bug Fixes
+
+* `receiptNumber` is not required ([27541c3](https://www.github.com/brokeyourbike/tingg-api-client-php/commit/27541c33d740d4dd2dc56657199205c787476612))
+
 ### [0.3.1](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.3.0...v0.3.1) (2022-04-07)
 
 
