@@ -8,9 +8,7 @@
 
 namespace BrokeYourBike\Tingg\Tests;
 
-use BrokeYourBike\Tingg\Models\WebhookAcknowledgement;
 use BrokeYourBike\Tingg\Models\PaymentWebhook;
-use BrokeYourBike\Tingg\Models\AuthStatus;
 
 /**
  * @author Ivan Stasiuk <ivan@stasi.uk>
