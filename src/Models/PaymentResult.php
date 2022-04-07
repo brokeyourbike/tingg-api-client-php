@@ -26,6 +26,6 @@ class PaymentResult extends DataTransferObject
     public ?string $serviceCode;
     public ?string $serviceName;
     public ?string $payerClientCode;
-    public string $receiptNumber;
+    public ?string $receiptNumber;
     public ?string $receiverNarration;
 }
