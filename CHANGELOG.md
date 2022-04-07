@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.2.0...v0.3.0) (2022-04-07)
+
+
+### Features
+
+* add `PaymentWebhook` ([e3fae84](https://www.github.com/brokeyourbike/tingg-api-client-php/commit/e3fae84c5b23db66a8f8aae3e25cee7e0f5bef3d))
+
 ## [0.2.0](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.1.1...v0.2.0) (2022-04-03)
 
 
