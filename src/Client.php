@@ -51,7 +51,7 @@ class Client implements HttpClientInterface
             $extraData['productCode'] = $payment->getProductCode();
         }
 
-        $response = $this->performRequest(HttpMethodEnum::POST, '/', [
+        $response = $this->performRequest(HttpMethodEnum::POST, '', [
             'countryCode' => $payment->getCountryCodeAlpha2(),
             'function' => 'BEEP.postPayment',
             'payload' => [
@@ -82,7 +82,7 @@ class Client implements HttpClientInterface
 
     public function queryPaymentStatus(PaymentInterface $payment): PaymentsResponse
     {
-        $response = $this->performRequest(HttpMethodEnum::POST, '/', [
+        $response = $this->performRequest(HttpMethodEnum::POST, '', [
             'countryCode' => $payment->getCountryCodeAlpha2(),
             'function' => 'BEEP.queryPaymentStatus',
             'payload' => [
