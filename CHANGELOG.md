@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.3.0...v0.3.1) (2022-04-07)
+
+
+### Bug Fixes
+
+* send at the specified base url ([7e7f826](https://www.github.com/brokeyourbike/tingg-api-client-php/commit/7e7f826ac4ccd7dd2ffc8f476ac2576421e078e7))
+
+
+### Miscellaneous Chores
+
+* remove dead code ([ea51e0d](https://www.github.com/brokeyourbike/tingg-api-client-php/commit/ea51e0d63e66d51d39d1c58d061d26819d13a6bc))
+
 ## [0.3.0](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.2.0...v0.3.0) (2022-04-07)
 
 
