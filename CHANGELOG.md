@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.0](https://github.com/brokeyourbike/tingg-api-client-php/compare/v0.3.2...v0.4.0) (2023-05-20)
+
+
+### Features
+
+* bump ([49fcf7a](https://github.com/brokeyourbike/tingg-api-client-php/commit/49fcf7a03bb5ef5d3e56e4559d716f97450c5ac4))
+
+
+### Bug Fixes
+
+* bump ([ca8cdf8](https://github.com/brokeyourbike/tingg-api-client-php/commit/ca8cdf809e47a73d80a24e95587f6a4bfd11607e))
+
+
+### Miscellaneous Chores
+
+* badges ([493ae51](https://github.com/brokeyourbike/tingg-api-client-php/commit/493ae512dc7e0d8c5dec0a946bf65e0482235917))
+* button ([9a933b1](https://github.com/brokeyourbike/tingg-api-client-php/commit/9a933b19daa0534fe1f9f6ba0c991156c72fd7c8))
+* release 0.3.2 ([436f66f](https://github.com/brokeyourbike/tingg-api-client-php/commit/436f66f6f9c409714d2138d6968f5b31663c7b29))
+
 ### [0.3.2](https://www.github.com/brokeyourbike/tingg-api-client-php/compare/v0.3.1...v0.3.2) (2023-05-14)
 
 
